@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>C.CLOUD | Toko Fashion Kekinian</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-gradient-to-b from-pink-50 to-white font-sans">
+
+  <header class="bg-gradient-to-r from-black via-gray-800 to-black text-pink-400 p-6 text-center shadow">
+    <h1 class="text-4xl font-extrabold tracking-wider">C.CLOUD</h1>
+    <p class="text-sm text-gray-300">Fashion Kekinian, Untukmu yang Stylish</p>
+  </header>
+
+  <nav class="bg-white shadow-lg sticky top-0 z-50 p-4 flex justify-center space-x-8">
+    <a href="#home" class="font-semibold text-purple-700 hover:text-purple-900 transition">Home</a>
+    <a href="#sale" class="font-semibold text-pink-700 hover:text-pink-900 transition">Sale</a>
+    <a href="#fashion" class="font-semibold text-indigo-700 hover:text-indigo-900 transition">Fashion</a>
+    <a href="#cart" class="font-semibold text-green-700 hover:text-green-900 transition">Cart (<span id="cart-count">0</span>)</a>
+  </nav>
+
+  <section id="home" class="relative bg-cover bg-center text-center py-32" style="background-image: url('b.jpg');">
+    <div class="a bg-opacity-50 absolute inset-0"></div>
+    <div class="relative z-10">
+      <img src="c.jpg" alt="Logo C.CLOUD" class="mx-auto mb-4 w-24 h-24 rounded-full shadow-lg" />
+      <h2 class="text-5xl font-extrabold text-white drop-shadow-lg">C.CLOUD</h2>
+      <p class="text-2xl mt-2 text-pink-500 font-semibold">Tampil Stylish Setiap Hari</p>
+      <button onclick="document.getElementById('fashion').scrollIntoView({ behavior: 'smooth' });"
+        class="mt-6 px-8 py-3 bg-green-600 hover:bg-green-700 rounded text-white font-semibold shadow-lg transition">
+        Belanja Sekarang
+      </button>
+    </div>
+  </section>
+
+  <section id="sale" class="max-w-6xl mx-auto py-12 px-6">
+    <h2 class="text-4xl font-bold mb-8 text-center text-red-600">Promo & Diskon Spesial</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="bg-yellow-100 p-6 rounded-xl shadow text-center hover:shadow-xl transition">
+        <h3 class="text-2xl font-semibold text-red-700 mb-2">Diskon 50%</h3>
+        <p class="text-gray-700">Untuk semua produk wanita sampai Minggu ini!</p>
+      </div>
+      <div class="bg-yellow-100 p-6 rounded-xl shadow text-center hover:shadow-xl transition">
+        <h3 class="text-2xl font-semibold text-green-700 mb-2">Beli 1 Gratis 1</h3>
+        <p class="text-gray-700">Spesial untuk blouse dan skort pilihan.</p>
+      </div>
+      <div class="bg-yellow-100 p-6 rounded-xl shadow text-center hover:shadow-xl transition">
+        <h3 class="text-2xl font-semibold text-blue-700 mb-2">Gratis Ongkir</h3>
+        <p class="text-gray-700">Untuk belanja di atas Rp300.000 ke seluruh Indonesia.</p>
+      </div>
+    </div>
+  </section>
+
+<section id="fashion" class="max-w-6xl mx-auto py-12 px-6 bg-white">
+  <h2 class="text-4xl font-extrabold mb-10 text-center text-green-600 tracking-wide">🌿 Koleksi Terbaru 🌿</h2>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+
+    <div class="product-card bg-white shadow-lg p-6 rounded-xl text-center hover:shadow-2xl transition duration-300">
+      <div class="img-wrapper bg-pink-100 p-2 rounded-md">
+        <img src="gmb 1.jpg" alt="Blouse" class="w-full h-64 object-cover rounded-md" />
+      </div>
+      <h3 class="font-semibold mt-4 text-xl text-green-700 hover:text-green-800 transition">Blouse</h3>
+      <p class="text-lg text-red-600 font-medium italic">Rp 199.000</p>
+      <button onclick="addToCart('Blouse', 199000, 'gmb 1.jpg')" class="mt-4 mx-auto flex items-center justify-center gap-2 bg-green-600 text-white font-semibold px-5 py-2 rounded-full shadow-lg hover:bg-green-700 hover:scale-105 transition-transform duration-300">🛒 Tambah ke Keranjang</button>
+    </div>
+
+    <div class="product-card bg-white shadow-lg p-6 rounded-xl text-center hover:shadow-2xl transition duration-300">
+      <div class="img-wrapper bg-pink-100 p-2 rounded-md">
+        <img src="gmb 2.jpg" alt="Skort" class="w-full h-64 object-cover rounded-md" />
+      </div>
+      <h3 class="font-semibold mt-4 text-xl text-green-700 hover:text-green-800 transition">Skort</h3>
+      <p class="text-lg text-red-600 font-medium italic">Rp 179.000</p>
+      <button onclick="addToCart('Skort', 179000, 'gmb 2.jpg')" class="mt-4 mx-auto flex items-center justify-center gap-2 bg-green-600 text-white font-semibold px-5 py-2 rounded-full shadow-lg hover:bg-green-700 hover:scale-105 transition-transform duration-300">🛒 Tambah ke Keranjang</button>
+    </div>
+
+    <div class="product-card bg-white shadow-lg p-6 rounded-xl text-center hover:shadow-2xl transition duration-300">
+      <div class="img-wrapper bg-pink-100 p-2 rounded-md">
+        <img src="gmb 3.jpg" alt="Dress" class="w-full h-64 object-cover rounded-md" />
+      </div>
+      <h3 class="font-semibold mt-4 text-xl text-green-700 hover:text-green-800 transition">Dress</h3>
+      <p class="text-lg text-red-600 font-medium italic">Rp 249.000</p>
+      <button onclick="addToCart('Dress', 249000, 'gmb 3.jpg')" class="mt-4 mx-auto flex items-center justify-center gap-2 bg-green-600 text-white font-semibold px-5 py-2 rounded-full shadow-lg hover:bg-green-700 hover:scale-105 transition-transform duration-300">🛒 Tambah ke Keranjang</button>
+    </div>
+
+    <div class="product-card bg-white shadow-lg p-6 rounded-xl text-center hover:shadow-2xl transition duration-300">
+      <div class="img-wrapper bg-pink-100 p-2 rounded-md">
+        <img src="gmb 4.jpg" alt="One Set" class="w-full h-64 object-cover rounded-md" />
+      </div>
+      <h3 class="font-semibold mt-4 text-xl text-green-700 hover:text-green-800 transition">One Set</h3>
+      <p class="text-lg text-red-600 font-medium italic">Rp 296.000</p>
+      <button onclick="addToCart('One set', 296000, 'gmb 4.jpg')" class="mt-4 mx-auto flex items-center justify-center gap-2 bg-green-600 text-white font-semibold px-5 py-2 rounded-full shadow-lg hover:bg-green-700 hover:scale-105 transition-transform duration-300">🛒 Tambah ke Keranjang</button>
+    </div>
+
+    <div class="product-card bg-white shadow-lg p-6 rounded-xl text-center hover:shadow-2xl transition duration-300">
+      <div class="img-wrapper bg-pink-100 p-2 rounded-md">
+        <img src="gmb 5.jpg" alt="Gelang" class="w-full h-64 object-cover rounded-md" />
+      </div>
+      <h3 class="font-semibold mt-4 text-xl text-green-700 hover:text-green-800 transition">Gelang</h3>
+      <p class="text-lg text-red-600 font-medium italic">Rp 79.000</p>
+      <button onclick="addToCart('Gelang', 79000, 'gmb 5.jpg')" class="mt-4 mx-auto flex items-center justify-center gap-2 bg-green-600 text-white font-semibold px-5 py-2 rounded-full shadow-lg hover:bg-green-700 hover:scale-105 transition-transform duration-300">🛒 Tambah ke Keranjang</button>
+    </div>
+
+    <div class="product-card bg-white shadow-lg p-6 rounded-xl text-center hover:shadow-2xl transition duration-300">
+      <div class="img-wrapper bg-pink-100 p-2 rounded-md">
+        <img src="gmb 6.jpg" alt="Vest" class="w-full h-64 object-cover rounded-md" />
+      </div>
+      <h3 class="font-semibold mt-4 text-xl text-green-700 hover:text-green-800 transition">Vest</h3>
+      <p class="text-lg text-red-600 font-medium italic">Rp 129.000</p>
+      <button onclick="addToCart('Vest', 129000, 'gmb 6.jpg')" class="mt-4 mx-auto flex items-center justify-center gap-2 bg-green-600 text-white font-semibold px-5 py-2 rounded-full shadow-lg hover:bg-green-700 hover:scale-105 transition-transform duration-300">🛒 Tambah ke Keranjang</button>
+    </div>
+
+  </div>
+</section>
+
+<section id="cart" class="bg-white max-w-6xl mx-auto p-10 mt-12 rounded-2xl shadow-2xl transition-all">
+  <div class="flex items-center justify-between mb-6">
+    <h2 class="text-4xl font-extrabold text-blue-800 flex items-center gap-2">
+      <svg class="w-8 h-8 text-blue-500" fill="currentColor" viewBox="0 0 20 20"><path d="M16 6a1 1 0 00-1-1H5.414l-.707-.707A1 1 0 003.586 4H2a1 1 0 100 2h1.586l3.707 3.707A1 1 0 008 10h6a1 1 0 00.894-.553l3-6A1 1 0 0016 6z"/></svg>
+      Keranjang Belanja
+    </h2>
+
+    <div class="flex items-center gap-2">
+      <label for="bg-color" class="text-sm font-semibold text-gray-600"></label>
+      <select id="bg-color" class="p-1 border rounded text-sm">
+        <option value="bg-white">white</option>
+        <option value="bg-blue-200">blue</option>
+        <option value="bg-green-200">green</option>
+        <option value="bg-yellow-200">yellow</option>
+        <option value="bg-pink-200">red</option>
+      </select>
+    </div>
+  </div>
+
+  <div id="cart-items" class="space-y-6 bg-white p-4 rounded-lg shadow-inner min-h-[100px]">
+    </div>
+
+  <p class="mt-6 font-bold text-2xl text-green-700 border-t pt-4">Total: Rp <span id="cart-total">0</span></p>
+
+  <div class="mt-8">
+    <h3 class="text-xl font-semibold text-indigo-800 mb-2">🧾 Metode Pembayaran</h3>
+    <div class="space-y-2">
+      <label class="flex items-center gap-2">
+        <input type="radio" name="payment" value="COD" checked class="accent-green-600"> 
+        <span>Bayar di Tempat (COD)</span>
+      </label>
+      <label class="flex items-center gap-2">
+        <input type="radio" name="payment" value="Transfer" class="accent-blue-600"> 
+        <span>Transfer Bank/ATM</span>
+      </label>
+    </div>
+  </div>
+
+  <div class="mt-6 hidden" id="transfer-options">
+    <h4 class="font-semibold text-purple-700 mb-2">🏦 Pilih Bank</h4>
+    <select id="bank-select" class="w-full p-3 border rounded focus:ring-2 focus:ring-purple-400 transition">
+      <option value="">-- Pilih Bank --</option>
+      <option value="BRI">BRI - 1234567890</option>
+      <option value="BNI">BNI - 9876543210</option>
+      <option value="Mandiri">Mandiri - 1122334455</option>
+      <option value="BCA">BCA - 5566778899</option>
+    </select>
+  </div>
+
+  <div class="mt-6">
+    <label for="note" class="block font-semibold text-red-600 mb-1">📝 Catatan untuk Penjual:</label>
+    <textarea id="note" class="w-full p-3 border border-gray-300 rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-red-300" rows="3" placeholder="Tulis catatan atau permintaan khusus..."></textarea>
+  </div>
+
+  <button onclick="checkout()" class="mt-8 w-full bg-gradient-to-r from-green-500 to-green-700 text-white text-lg py-3 rounded-lg shadow-md hover:shadow-xl hover:scale-105 transition-transform duration-200">
+    🚀 Checkout Sekarang
+  </button>
+</section>
+
+<footer class="text-center py-6 text-sm text-gray-500 mt-10 bg-white">
+  &copy; 2025 <span class="text-pink-500 font-bold">C.CLOUD</span>. All rights reserved.
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

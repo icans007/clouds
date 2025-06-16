@@ -1,0 +1,18 @@
+html { 
+    scroll-behavior: smooth; 
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    border-radius: .5rem;
+}
+
+#transfer-options { 
+    display: none; 
+}
+
+/* Optional: Additional styling for the image wrappers if needed beyond Tailwind's utility classes */
+/* .img-wrapper {
+  background-color: var(--image-background-color, #fbcfe8); 
+} */
